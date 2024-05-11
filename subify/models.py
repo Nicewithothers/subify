@@ -16,4 +16,5 @@ class Sub(UserMixin, database.Model):
     type = database.Column(database.String(64), nullable=False)
     occurance_type = database.Column(database.String(64), nullable=False)
     price = database.Column(database.Integer, nullable=False)
+    is_paid = database.Column(database.Boolean, nullable=False, default=False)
     user_id = database.Column(database.Integer, database.ForeignKey('user.id'), nullable=False)

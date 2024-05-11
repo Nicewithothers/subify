@@ -26,7 +26,7 @@ def create_app():
 
     from subify.auth.routes import auth
     from subify.main.routes import main
-    from subify.expenses.routes import expenses
+    from subify.sub.routes import expenses
     app.register_blueprint(auth)
     app.register_blueprint(main)
     app.register_blueprint(expenses)

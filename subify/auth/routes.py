@@ -1,4 +1,3 @@
-
 from flask import Blueprint, request, redirect, render_template, flash, url_for
 from flask_login import login_required, logout_user, login_user, current_user
 from werkzeug.security import generate_password_hash, check_password_hash

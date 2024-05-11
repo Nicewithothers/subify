@@ -11,7 +11,7 @@ class LoginForm(FlaskForm):
         InputRequired(message="Mező kitöltése kötelező!"),
         Length(min=4, max=25, message="4 és 25 karakter között kell legyen!")
     ])
-    submit = SubmitField('login')
+    submit = SubmitField('Login')
 
 
 class RegisterForm(FlaskForm):
@@ -28,4 +28,4 @@ class RegisterForm(FlaskForm):
         InputRequired(message="Mező kitöltése kötelező!"),
         EqualTo('password', message="Nem egyezik a két jelszó!")
     ])
-    submit = SubmitField('register')
+    submit = SubmitField('Register')

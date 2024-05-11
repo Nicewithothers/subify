@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %} Add expense {% endblock %}
+
+{% block header %}
+    <form method="post" action="">
+        {{ form.csrf_token }}
+        <div>
+            {{ form.name(class_='form-control', placeholder='Név', autofocus=False, autocomplete='off') }}
+            <ul>
+                {% for error in form.name.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {{ form.type(class_='form-control', placeholder='Típus', autofocus=False, autocomplete='off') }}
+            <ul>
+                {% for error in form.type.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {{ form.occurance_type(class_='form-control', placeholder='Időszak', autofocus=False, autocomplete='off') }}
+            <ul>
+                {% for error in form.occurance_type.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {{ form.price(class_='form-control', placeholder='Összeg', autofocus=False, autocomplete='off') }}
+            <ul>
+                {% for error in form.price.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {{ form.submit() }}
+        </div>
+    </form>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="flash animalt-slide-from-left slide {{ category }}">
+                    <h5>{{ message }}</h5>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+{% endblock %}
