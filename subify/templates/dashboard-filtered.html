@@ -1,27 +1,27 @@
 {% if subs == None %}
     <tr>
-        <td>There are no subs there.</td>
+        <td colspan="6">There are no subs there.</td>
     </tr>
 {% else %}
     {% for sub in subs %}
         <tr>
-            <td>{{ sub.name.upper() }}</td>
+            <td>{{ sub.name }}</td>
             <td>{{ sub.type.upper() }}</td>
             <td>{{ sub.occurance_type }}</td>
-            <td>{{ sub.price }}</td>
-            {% if is_paid %}
+            <td>{{ sub.price }} Ft</td>
+            {% if sub.is_paid %}
                 <td style="color: green">Yes</td>
             {% else %}
                 <td style="color: red">No</td>
             {% endif %}
             <td>
                 <div class="action-field">
-                    {% if not is_paid %}
-                        <form action="/pay/{{ sub.id }}" method="post">
+                    {% if not sub.is_paid %}
+                        <form class="action-form" action="/paysub/{{ sub.id }}" method="post">
                             <button class="btn-pay">Pay</button>
                         </form>
                     {% endif %}
-                    <form action="/deletesub/{{ sub.id }}" method="post">
+                    <form class="action-form" action="/deletesub/{{ sub.id }}" method="post">
                         <button class="btn-delete">Delete</button>
                     </form>
                 </div>

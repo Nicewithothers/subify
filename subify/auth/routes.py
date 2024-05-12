@@ -48,7 +48,7 @@ def register():
         database.session.add(user)
         database.session.commit()
 
-        return redirect(url_for('main.index', current_user=current_user))
+        return redirect(url_for('sub.dashboard', current_user=current_user))
 
     return render_template("register.html", form=reg_form)
 

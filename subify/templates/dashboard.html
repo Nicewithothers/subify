@@ -7,23 +7,31 @@
         <div class="filter-container">
             <input type="radio" checked name="filter" id="allRadio" value="" autocomplete="off"
                    hx-get="/filtersubs" hx-trigger="load, click" hx-target="#subs-filter">
-            <label for="allRadio">Active items</label>
+            <label for="allRadio">All items</label>
 
-            <input type="radio" name="filter" id="subRadio" value="Subscriptions" autocomplete="off"
+            <input type="radio" name="filter" id="subRadio" value="streaming" autocomplete="off"
                    hx-get="/filtersubs" hx-trigger="click" hx-target="#subs-filter">
             <label for="subRadio">Subscriptions</label>
 
-            <input type="radio" name="filter" id="taxRadio" value="Taxes/bills" autocomplete="off"
+            <input type="radio" name="filter" id="taxRadio" value="bills" autocomplete="off"
                    hx-get="/filtersubs" hx-trigger="click" hx-target="#subs-filter">
             <label for="taxRadio">Taxes/bills</label>
 
-            <input type="radio" name="filter" id="grocRadio" value="Groceries" autocomplete="off"
+            <input type="radio" name="filter" id="grocRadio" value="groceries" autocomplete="off"
                    hx-get="/filtersubs" hx-trigger="click" hx-target="#subs-filter">
             <label for="grocRadio">Groceries</label>
 
-            <input type="radio" name="filter" id="otherRadio" value="Other"
+            <input type="radio" name="filter" id="otherRadio" value="other"
                    autocomplete="off" hx-get="/filtersubs" hx-trigger="click" hx-target="#subs-filter">
             <label for="otherRadio">Other</label>
+
+            <input type="radio" name="filter" id="unpaidRadio" value="Unpaid"
+                   autocomplete="off" hx-get="/filtersubs" hx-trigger="click" hx-target="#subs-filter">
+            <label for="unpaidRadio">Unpaid</label>
+
+            <input type="radio" name="filter" id="paidRadio" value="Paid"
+                   autocomplete="off" hx-get="/filtersubs" hx-trigger="click" hx-target="#subs-filter">
+            <label for="paidRadio">Paid</label>
         </div>
         <div class="data-container">
             <table>

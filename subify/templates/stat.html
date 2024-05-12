@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %} Statistics {% endblock %}
+
+{% block content %}
+    <div class="stat-wrapper">
+        <div class="stat-first-row">
+            <div id="first-fig"></div>
+            <div id="second-fig"></div>
+        </div>
+        <div class="stat-second-row">
+            <div id="third-fig"></div>
+            <div id="fourth-fig"></div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var first_fig = {{ first_fig | safe }};
+        Plotly.plot('first-fig', first_fig, {});
+
+        var second_fig = {{ second_fig | safe }}
+        Plotly.plot('second-fig', second_fig, {})
+
+        var third_fig = {{ third_fig | safe }}
+        Plotly.plot('third-fig', third_fig, {})
+
+        var fourth_fig = {{ fourth_fig | safe }};
+        Plotly.plot('fourth-fig', fourth_fig, {});
+    </script>
+{% endblock %}

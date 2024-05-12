@@ -9,7 +9,7 @@ class NewSubForm(FlaskForm):
         Length(min=2, message="You must type a name longer than 2 characters!"),
     ])
     type = SelectField('type', default='streaming', choices=[
-        ('streaming', 'Streaming service'),
+        ('streaming', 'Streaming'),
         ('groceries', 'Groceries'),
         ('bills', 'Taxes/bills'),
         ('meals', 'Meals'),
