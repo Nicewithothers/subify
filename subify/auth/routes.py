@@ -1,5 +1,5 @@
 """Imports"""
-from flask import Blueprint, request, redirect, render_template, flash, url_for
+from flask import Blueprint, request, redirect, render_template, flash, url_for, session
 from flask_login import login_required, logout_user, login_user, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
 from subify.auth.forms import LoginForm, RegisterForm
@@ -63,5 +63,6 @@ def register():
 @login_required
 def logout():
     """Logout route"""
+    session.pop('_flashes', None)
     logout_user()
     return redirect(url_for('main.index'))
