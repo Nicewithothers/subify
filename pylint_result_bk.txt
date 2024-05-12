@@ -1,0 +1,18 @@
+************* Module subify
+subify\__init__.py:19:4: C0415: Import outside toplevel (subify.models.User) (import-outside-toplevel)
+subify\__init__.py:33:4: C0415: Import outside toplevel (subify.auth.routes.auth) (import-outside-toplevel)
+subify\__init__.py:34:4: C0415: Import outside toplevel (subify.main.routes.main) (import-outside-toplevel)
+subify\__init__.py:35:4: C0415: Import outside toplevel (subify.sub.routes.sub) (import-outside-toplevel)
+************* Module subify.sub.routes
+subify\sub\routes.py:107:0: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
+subify\sub\routes.py:120:0: R0914: Too many local variables (18/15) (too-many-locals)
+subify\sub\routes.py:147:53: E1102: func.count is not callable (not-callable)
+subify\sub\routes.py:163:12: E1102: func.count is not callable (not-callable)
+************* Module subify.sub.__init__
+subify\sub\__init__.py:1:0: R0401: Cyclic import (subify -> subify.auth.routes) (cyclic-import)
+subify\sub\__init__.py:1:0: R0401: Cyclic import (subify -> subify.auth.routes -> subify.models) (cyclic-import)
+subify\sub\__init__.py:1:0: R0401: Cyclic import (subify -> subify.models) (cyclic-import)
+subify\sub\__init__.py:1:0: R0401: Cyclic import (subify -> subify.sub.routes) (cyclic-import)
+
+------------------------------------------------------------------
+Your code has been rated at 8.93/10 (previous run: 8.88/10, +0.05)

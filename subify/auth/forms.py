@@ -1,9 +1,11 @@
+"""Imports"""
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import InputRequired, Length, Email, EqualTo
 
 
 class LoginForm(FlaskForm):
+    """Login form"""
     email = StringField('email', validators=[
         InputRequired(message="Mező kitöltése kötelező!"),
         Email(message="Nem megfelelő e-mail formátum!")])
@@ -15,6 +17,7 @@ class LoginForm(FlaskForm):
 
 
 class RegisterForm(FlaskForm):
+    """Register form"""
     email = StringField('email', validators=[
         InputRequired(message="Mező kitöltése kötelező!"),
         Email(message="Nem megfelelő e-mail formátum!")])

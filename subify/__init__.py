@@ -1,3 +1,4 @@
+"""Imports"""
 import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
@@ -8,6 +9,7 @@ login = LoginManager()
 
 
 def create_app():
+    """App creation"""
     app = Flask(__name__)
     app.config.from_mapping({
         "SECRET_KEY": os.urandom(24),
@@ -15,14 +17,19 @@ def create_app():
         "SQLALCHEMY_DATABASE_URI": 'sqlite:///subify.db'
     })
 
-    from subify.models import User, Sub
+    from subify.models import User
     database.init_app(app)
 
     with app.app_context():
         database.create_all()
 
     login.init_app(app)
-    login.user_loader(lambda user_id: models.User.query.get(user_id))
+
+    def load_user(user_id):
+        """Load user"""
+        return User.query.get(user_id)
+
+    login.user_loader(load_user)
 
     from subify.auth.routes import auth
     from subify.main.routes import main
