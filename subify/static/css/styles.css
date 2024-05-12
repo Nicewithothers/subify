@@ -6,6 +6,9 @@ body, html {
     font-family: "Noto Sans HK", serif;
 
     .background {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         height: 100%;
         background: linear-gradient(to right, #4A00E0, #8E2DE2) center no-repeat;
         background-size: cover;
@@ -40,116 +43,146 @@ body, html {
                 }
             }
         }
+
+        nav ul:first-of-type li a {
+            color: #222;
+            font-weight: bold;
+        }
+
+        main {
+            width: 100%;
+            margin: 100px auto;
+            padding-bottom: 100px;
+
+            .dashboard-container {
+                display: flex;
+                justify-content: space-evenly;
+                align-content: center;
+                flex-wrap: wrap;
+
+                .filter-container {
+                    display: flex;
+                    justify-content: center;
+                    align-content: center;
+                    flex-direction: column;
+                }
+
+                input[type="radio"] {
+                    visibility: hidden;
+                    font-size: 4rem;
+                    text-decoration: none;
+                    color: #222;
+                    padding: 0;
+                    border-bottom: 1px solid #222;
+                }
+
+                input[type="radio"] + label {
+                    cursor: pointer;
+                }
+
+                input[type="radio"]:checked + label {
+                    color: yellow;
+                }
+
+                .data-container {
+                    display: flex;
+
+                    .action-field {
+                        display: flex;
+                        flex-direction: row;
+
+
+                        .btn-pay {
+                            background-color: rgba(51, 51, 51, 0.05);
+                            border-radius: 8px;
+                            border-width: 0;
+                            color: #333333;
+                            cursor: pointer;
+                            display: inline-block;
+                            font-size: 14px;
+                            font-weight: 500;
+                            line-height: 20px;
+                            list-style: none;
+                            margin: 0;
+                            padding: 10px 12px;
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+
+        form {
+            width: 20%;
+            margin: 0 auto;
+
+            * {
+                display: block;
+            }
+        }
+
+        form input {
+            background: none;
+            width: 100%;
+            font-family: "Noto Sans HK", serif;
+            border: none;
+            border-bottom: 1px solid #dadada;
+            padding: 10px 0;
+            margin: 10px 0;
+            color: white;
+        }
+
+        form select {
+            width: 100%;
+            background: none;
+            font-family: "Noto Sans HK", serif;
+            border: none;
+            border-bottom: 1px solid #dadada;
+            padding: 10px 0;
+            margin: 10px 0;
+            color: black;
+        }
+
+        form input[type="submit"] {
+            border-radius: 10px;
+            width: 10%;
+            min-width: 120px;
+            background: linear-gradient(to right, #EF629F, #EECDA3);
+            -webkit-box-shadow: 0 10px 12px -10px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 0 12px -10px rgba(0, 0, 0, 0.75);
+            box-shadow: 0 10px 12px -10px rgba(0, 0, 0, 0.75);
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: #fff;
+        }
+
+        .error {
+            color: rgb(255, 74, 74);
+            font-style: italic;
+        }
+
+        .single {
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        .single .title {
+            font-size: 3rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #fff;
+            width: 100%;
+            height: 5%;
+            bottom: 0;
+            z-index: 99;
+            font-size: 1rem;
+            color: black;
+        }
     }
-}
-
-nav ul:first-of-type li a {
-    color: #222;
-    font-weight: bold;
-}
-
-header div h1 {
-    margin: 0;
-    padding-left: 0;
-    padding-top: 120px;
-    font-size: 6rem;
-    line-height: 6rem;
-    border-bottom: 1px dotted #eee;
-    text-transform: uppercase;
-    padding-bottom: 30px;
-    color: white;
-}
-
-header div p {
-    padding-left: 0;
-    width: 60%;
-    padding-bottom: 10px;
-}
-
-
-main {
-    width: 95%;
-    margin: 100px auto;
-    padding-bottom: 100px;
-}
-
-.noposts {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-
-    .posts {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-}
-
-.post {
-    margin: 40px;
-}
-
-.author {
-    padding: 0;
-    margin-top: -12px;
-    color: #e8e8e8;
-}
-
-.post .title a {
-    font-size: 4rem;
-    text-decoration: none;
-    color: #222;
-    padding: 0;
-    border-bottom: 1px solid #222;
-}
-
-form {
-    width: 20%;
-    margin: 0 auto;
-
-    * {
-        display: block;
-    }
-}
-
-form input, form textarea {
-    background: none;
-    width: 100%;
-    font-family: "Noto Sans HK", serif;
-    border: none;
-    border-bottom: 1px solid #dadada;
-    padding: 10px 0;
-    margin: 10px 0;
-    color: white;
-}
-
-form input[type="submit"] {
-    border-radius: 10px;
-    width: 10%;
-    min-width: 120px;
-    background: linear-gradient(to right, #EF629F, #EECDA3);
-    -webkit-box-shadow: 0 10px 12px -10px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0 12px -10px rgba(0, 0, 0, 0.75);
-    box-shadow: 0 10px 12px -10px rgba(0, 0, 0, 0.75);
-    font-size: 1.2rem;
-    cursor: pointer;
-    color: #fff;
-}
-
-.error {
-    color: rgb(255, 74, 74);
-    font-style: italic;
-}
-
-.single {
-    width: 50%;
-    margin: 0 auto;
-}
-
-.single .title {
-    font-size: 3rem;
-    margin: 0;
-    padding: 0;
 }

@@ -1,5 +1,44 @@
 {% extends 'base.html' %}
 
-{% block content %}
+{% block title %} Dashboard {% endblock %}
 
+{% block content %}
+    <div class="dashboard-container">
+        <div class="filter-container">
+            <input type="radio" checked name="filter" id="allRadio" value="" autocomplete="off"
+                   hx-get="/filtersubs" hx-trigger="load, click" hx-target="#subs-filter">
+            <label for="allRadio">Active items</label>
+
+            <input type="radio" name="filter" id="subRadio" value="Subscriptions" autocomplete="off"
+                   hx-get="/filtersubs" hx-trigger="click" hx-target="#subs-filter">
+            <label for="subRadio">Subscriptions</label>
+
+            <input type="radio" name="filter" id="taxRadio" value="Taxes/bills" autocomplete="off"
+                   hx-get="/filtersubs" hx-trigger="click" hx-target="#subs-filter">
+            <label for="taxRadio">Taxes/bills</label>
+
+            <input type="radio" name="filter" id="grocRadio" value="Groceries" autocomplete="off"
+                   hx-get="/filtersubs" hx-trigger="click" hx-target="#subs-filter">
+            <label for="grocRadio">Groceries</label>
+
+            <input type="radio" name="filter" id="otherRadio" value="Other"
+                   autocomplete="off" hx-get="/filtersubs" hx-trigger="click" hx-target="#subs-filter">
+            <label for="otherRadio">Other</label>
+        </div>
+        <div class="data-container">
+            <table>
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Occurance</th>
+                    <th>Price</th>
+                    <th>Paid</th>
+                    <th>Actions</th>
+                </tr>
+                </thead>
+                <tbody id="subs-filter"></tbody>
+            </table>
+        </div>
+    </div>
 {% endblock %}

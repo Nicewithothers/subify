@@ -1,6 +1,10 @@
 <nav>
     <ul>
-        <li><a href="/">Subify</a></li>
+        {% if not current_user.is_authenticated %}
+            <li><a href="/">Subify</a></li>
+        {% else %}
+            <li><a href="/dashboard">Subify</a></li>
+        {% endif %}
     </ul>
     <ul>
         {% if current_user.is_authenticated %}

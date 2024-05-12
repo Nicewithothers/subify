@@ -36,8 +36,8 @@
     {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
             {% for category, message in messages %}
-                <div class="flash animalt-slide-from-left slide {{ category }}">
-                    <h5>{{ message }}</h5>
+                <div class="flash {{ category }}">
+                    <h3>{{ message }}</h3>
                 </div>
             {% endfor %}
         {% endif %}
