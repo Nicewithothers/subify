@@ -23,7 +23,7 @@ class NewSubForm(FlaskForm):
         ('onetime', 'One-time'),
         ('daily', 'Daily'),
         ('weekly', 'Weekly'),
-        ('montly', 'Monthly'),
+        ('monthly', 'Monthly'),
         ('yearly', 'Yearly')
     ], validators=[
         InputRequired(message="You must select an"

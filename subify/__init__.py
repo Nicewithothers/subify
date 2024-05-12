@@ -8,13 +8,14 @@ database = SQLAlchemy()
 login = LoginManager()
 
 
-def create_app():
+def create_app(db_url='sqlite:///subify.db'):
     """App creation"""
     app = Flask(__name__)
     app.config.from_mapping({
         "SECRET_KEY": os.urandom(24),
         "SQLALCHEMY_TRACK_NOTIFICATIONS": False,
-        "SQLALCHEMY_DATABASE_URI": 'sqlite:///subify.db'
+        "SQLALCHEMY_DATABASE_URI": db_url,
+        "TESTING": False
     })
 
     from subify.models import User

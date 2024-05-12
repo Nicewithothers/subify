@@ -7,11 +7,11 @@ from wtforms.validators import InputRequired, Length, Email, EqualTo
 class LoginForm(FlaskForm):
     """Login form"""
     email = StringField('email', validators=[
-        InputRequired(message="Mező kitöltése kötelező!"),
-        Email(message="Nem megfelelő e-mail formátum!")])
+        InputRequired(message="You must type something here!"),
+        Email(message="Invalid email format!")])
     password = PasswordField('password', validators=[
-        InputRequired(message="Mező kitöltése kötelező!"),
-        Length(min=4, max=25, message="4 és 25 karakter között kell legyen!")
+        InputRequired(message="You must type something here!"),
+        Length(min=4, max=25, message="Invalid pw length!")
     ])
     submit = SubmitField('Login')
 
@@ -19,16 +19,16 @@ class LoginForm(FlaskForm):
 class RegisterForm(FlaskForm):
     """Register form"""
     email = StringField('email', validators=[
-        InputRequired(message="Mező kitöltése kötelező!"),
-        Email(message="Nem megfelelő e-mail formátum!")])
+        InputRequired(message="You must type something here!"),
+        Email(message="Invalid email format!")])
     name = StringField('name', validators=[
-        InputRequired(message="Mező kitöltése kötelező!")])
+        InputRequired(message="You must type something here!")])
     password = PasswordField('password', validators=[
-        InputRequired(message="Mező kitöltése kötelező!"),
-        Length(min=4, max=25, message="4 és 25 karakter között kell legyen!")
+        InputRequired(message="You must type something here!"),
+        Length(min=4, max=25, message="Invalid pw length!")
     ])
     password_verify = PasswordField('password_verify', validators=[
-        InputRequired(message="Mező kitöltése kötelező!"),
-        EqualTo('password', message="Nem egyezik a két jelszó!")
+        InputRequired(message="You must type something here!"),
+        EqualTo('password', message="Passwords do not match!")
     ])
     submit = SubmitField('Register')
